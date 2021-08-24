@@ -33,7 +33,10 @@ body {
   background: rgba(255, 255, 255, .1);
   font-size: 0;
   perspective: 500px;
- 
+}
+
+.items::-webkit-scrollbar {
+  display: none;
 }
   
 .items.active {
