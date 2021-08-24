@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
   <title>Click and Drag</title>
 </head>
 <body>
@@ -35,5 +36,35 @@
     <div class="item item24">24</div>
     <div class="item item25">25</div>
   </div>
+
+  <script>
+
+    const slider = document.querySelector('.items'); //item we want to slide
+    let isDown = false; //checking if I am clicking or not
+    let startX, scrollLeft;
+
+    slider.addEventListener('mousedown', () =>  {
+      isDown= true;
+      slider.classList.add('active');
+    })
+    
+    slider.addEventListener('mouseleave', () => {
+      isDown= false;
+      slider.classList.remove('active');
+      
+    })
+    
+    slider.addEventListener('mouseup', () =>    {
+      isDown= false;
+      slider.classList.remove('active');
+      
+    })
+    
+    slider.addEventListener('mousemove', () =>  {
+      if(!isDown) return; // stop function from running;
+    })    
+
+  </script>
+
 </body>
 </html>
